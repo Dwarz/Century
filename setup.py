@@ -13,7 +13,7 @@ test = board.Board()
 print(test.market)
 
 # CREATING CANVAS 
-canvas = pygame.display.set_mode((1000, 1000)) 
+canvas = pygame.display.set_mode((1000, 800)) 
 clock = pygame.time.Clock()
   
 # TITLE OF CANVAS 
