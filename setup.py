@@ -18,6 +18,7 @@ running = True
 gameBoard = board.Board()
 
 gameBoard.create_marketplace(canvas)
+gameBoard.create_traders(canvas)
   
 
 while running: 
