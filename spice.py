@@ -4,7 +4,7 @@ class Spice:
     type = 0
     locationx = 0
     locationy = 0
-    size = 10
+    size = 19
     color = (0,0,0)
     
     def __init__(self,type,locationx,locationy):

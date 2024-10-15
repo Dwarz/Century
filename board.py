@@ -2,19 +2,20 @@ import pygame
 
 import cards
 import spice
+import marketcard
 
 class Board:
-    market = cards.create_marketcards(5)
+    market = []
     traders = []
 
 def draw_marketplace(canvas,market):
-    canvaswidth = 1000
-    canvaslength = 800
+    #canvaswidth = 1000
+    #canvaslength = 800
     spacebetweencards = 20
     numberofcards = 5
-    startcardheight = 130
+    cardlocationy = 130
     cardheight = 160
-    cardwidth = (canvaswidth - ((numberofcards+1) * spacebetweencards))/ numberofcards
+    cardwidth = 120 #old: (canvaswidth - ((numberofcards+1) * spacebetweencards))/ numberofcards
     
     
     pygame.draw.rect(canvas, (200,0,0), pygame.Rect(10,10,980,300))
@@ -25,28 +26,30 @@ def draw_marketplace(canvas,market):
     
     #draw marketcards
     for x in range(numberofcards):
-        currentmarketcard = market[x]
-        startwidthofthiscard = spacebetweencards*(1+x)+x*cardwidth
-        pygame.draw.rect(canvas, (50,0,0), pygame.Rect(startwidthofthiscard,startcardheight,cardwidth,cardheight))
-        print(market[x])
+
+        cardlocationx = spacebetweencards*(1+x)+x*cardwidth
+
+        newmarketcard = marketcard.Marketcard(cardlocationx,cardlocationy)
+        market.append(newmarketcard)
+        newmarketcard.draw_card(canvas)
 
         #draw spices on cards
         blocklocation = 1
-        for y in currentmarketcard:
+        marketcardspices = newmarketcard.spices
+
+        for y in marketcardspices:
             printblock = True
             
             color = (0,0,0)
-            if  y == 0:
-                print('found a zero')
-                #donothing
-            elif y > 0 & y <= 4:
-                newspicelocationx = startwidthofthiscard + (20*blocklocation)
-                newspicelocationy = startcardheight+(cardheight/2)
+            if  y > 0 & y <= 4:
+                newspicelocationx = cardlocationx + (20*blocklocation)
+                newspicelocationy = cardlocationy+(cardheight/2)
                 newspice = spice.Spice(y,newspicelocationx,newspicelocationy)
                 newspice.draw_spice(canvas)
                 
-            else: #shouldnt happen but just in case
+            elif y > 4 & y < 0: #shouldnt happen but just in case
                 print('error in making spices in drawing marketcards')
+            #else is when y=0, in this case no spice is drawn, which is correct
 
             blocklocation = blocklocation+1
 
