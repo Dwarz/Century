@@ -21,7 +21,7 @@ class Marketcard(cards.Cards):
         
         #draw points on card:
         font = pygame.font.Font(None, 100)
-        text = font.render(str(self.points), True, (100+self.points*10,50,50))
+        text = font.render(str(self.points), True, (90+self.points*10,50,50))
         text_rect = text.get_rect(center=(self.locationx+ (self.cardwidth/2), self.locationy+(self.locationy/3)))
         canvas.blit(text, text_rect)
         
