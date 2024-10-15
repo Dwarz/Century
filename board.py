@@ -2,8 +2,9 @@ import pygame
 import marketcard
 
 class Board:
-    market = []
-    traders = []
+    def __init__(self):
+        self.market = []
+        self.traders = []
 
     def create_marketplace(self,canvas):
         spacebetweencards = 20

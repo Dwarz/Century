@@ -6,8 +6,6 @@ import spice
 class Marketcard(cards.Cards):
     type = 'marketcard'
     color = (50,0,0)
-    spices = []
-    points = 0
 
     def __init__(self,locationx,locationy):
         self.locationx = locationx

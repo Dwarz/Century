@@ -1,5 +1,3 @@
-#something something
-
 import pygame 
 import board
   
