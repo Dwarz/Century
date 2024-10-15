@@ -1,9 +1,16 @@
+import pygame
+
 class Spice:
+    type = 0
+    locationx = 0
+    locationy = 0
+    size = 10
+    color = (0,0,0)
+    
     def __init__(self,type,locationx,locationy):
-        type = 1
-        locationx = 0
-        locationy = 0
-        size = 10
+        self.type = type
+        self.locationx = locationx
+        self.locationy = locationy
         self.updatecolor()
 
     def updatecolor(self):
@@ -17,4 +24,7 @@ class Spice:
             self.color = (150,75,0)
         else:
             raise Exception("Error in spice - updatecolor")
+        
+    def draw_spice(self, canvas):
+        pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.size,self.size))
             

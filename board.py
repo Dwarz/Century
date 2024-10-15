@@ -1,6 +1,7 @@
 import pygame 
 
 import cards
+import spice
 
 class Board:
     market = cards.create_marketcards(5)
@@ -32,26 +33,21 @@ def draw_marketplace(canvas,market):
         #draw spices on cards
         blocklocation = 1
         for y in currentmarketcard:
+            printblock = True
             
             color = (0,0,0)
             if  y == 0:
                 print('found a zero')
                 #donothing
-            elif y == 1:
-                color = (255,223,0)
-            elif y == 2:
-                color = (255,0,0)
-            elif y == 3:
-                color = (0,255,0)
-            elif y == 4:
-                color = (150,75,0)
+            elif y > 0 & y <= 4:
+                newspicelocationx = startwidthofthiscard + (20*blocklocation)
+                newspicelocationy = startcardheight+(cardheight/2)
+                newspice = spice.Spice(y,newspicelocationx,newspicelocationy)
+                newspice.draw_spice(canvas)
+                
             else: #shouldnt happen but just in case
                 print('error in making spices in drawing marketcards')
 
-            pygame.draw.rect(canvas, color, pygame.Rect(startwidthofthiscard + (20*blocklocation),startcardheight+(cardheight/2),10,10))
             blocklocation = blocklocation+1
-
-
-            
 
 
