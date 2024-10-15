@@ -27,6 +27,7 @@ while running:
             running = False
     clock.tick(60)  # limits FPS to 60
 
-    board.draw_marketplace(canvas)
+    board.draw_marketplace(canvas,test.market)
 
     pygame.display.update() 
+    
