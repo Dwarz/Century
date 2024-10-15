@@ -43,4 +43,4 @@ class Board:
         text_rect = text.get_rect(center=(500, 350))
         canvas.blit(text, text_rect)
 
-        #Draw trader cards:
+        #TODO: Draw trader cards:

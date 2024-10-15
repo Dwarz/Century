@@ -19,6 +19,15 @@ gameBoard = board.Board()
 
 gameBoard.create_marketplace(canvas)
 gameBoard.create_traders(canvas)
+
+traders = []
+f = open("traders-exchange.txt", "r")
+for x in f:
+    line = x.replace('\n','')
+    traders.append([int(x) for x in str(line)])
+f.close()
+print(traders)
+
   
 
 while running: 
