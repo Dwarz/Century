@@ -1,6 +1,7 @@
 import cards
 import random
 import pygame
+import spice
 
 class Marketcard(cards.Cards):
     type = 'marketcard'
@@ -19,4 +20,26 @@ class Marketcard(cards.Cards):
 
     def draw_card(self,canvas):
         pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.cardwidth,self.cardheight))
-        #TODO: draw points on card
+        
+        #draw points on card:
+        font = pygame.font.Font(None, 100)
+        text = font.render(str(self.points), True, (100+self.points*10,50,50))
+        text_rect = text.get_rect(center=(self.locationx+ (self.cardwidth/2), self.locationy+(self.locationy/3)))
+        canvas.blit(text, text_rect)
+        
+        #draw spices on cards
+        blocklocation = 1
+        marketcardspices = self.spices
+
+        for y in marketcardspices:
+            if  y > 0 & y <= 4:
+                newspicelocationx = self.locationx + (20*blocklocation)
+                newspicelocationy = self.locationy+(self.cardheight/2)
+                newspice = spice.Spice(y,newspicelocationx,newspicelocationy)
+                newspice.draw_spice(canvas)
+                
+            elif y > 4 & y < 0: #shouldnt happen but just in case
+                print('error in making spices in drawing marketcards')
+            #else is when y=0, in this case no spice is drawn, which is correct
+
+            blocklocation = blocklocation+1
