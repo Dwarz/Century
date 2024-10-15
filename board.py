@@ -9,13 +9,11 @@ class Board:
     traders = []
 
 def draw_marketplace(canvas,market):
-    #canvaswidth = 1000
-    #canvaslength = 800
     spacebetweencards = 20
     numberofcards = 5
     cardlocationy = 130
     cardheight = 160
-    cardwidth = 120 #old: (canvaswidth - ((numberofcards+1) * spacebetweencards))/ numberofcards
+    cardwidth = 120
     
     
     pygame.draw.rect(canvas, (200,0,0), pygame.Rect(10,10,980,300))
@@ -38,9 +36,7 @@ def draw_marketplace(canvas,market):
         marketcardspices = newmarketcard.spices
 
         for y in marketcardspices:
-            printblock = True
             
-            color = (0,0,0)
             if  y > 0 & y <= 4:
                 newspicelocationx = cardlocationx + (20*blocklocation)
                 newspicelocationy = cardlocationy+(cardheight/2)

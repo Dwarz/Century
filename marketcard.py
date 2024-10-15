@@ -1,5 +1,6 @@
 import cards
 import random
+import pygame
 
 class Marketcard(cards.Cards):
     type = 'marketcard'
@@ -16,6 +17,6 @@ class Marketcard(cards.Cards):
         self.spices.sort()
         self.points = sum(self.spices)
 
-    def move_to(self,newlocationx,newlocationy):
-        self.locationx = newlocationx
-        self.locationy = newlocationy
+    def draw_card(self,canvas):
+        pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.cardwidth,self.cardheight))
+        #TODO: draw points on card
