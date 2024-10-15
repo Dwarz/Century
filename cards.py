@@ -1,6 +1,3 @@
-import random
-import pygame
-
 class Cards:
     locationx = 0
     locationy = 0
