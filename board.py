@@ -37,6 +37,7 @@ class Board:
         spacebetweentradercards = 20
         numberoftradercards = 7
         tradercardlocationy = 390
+        available_traders = tradercard.load_all_traders()        
         
         pygame.draw.rect(canvas, (100,100,200), pygame.Rect(10,300,980,260))
         font = pygame.font.Font(None, 100)
@@ -45,17 +46,19 @@ class Board:
         canvas.blit(text, text_rect)
 
         for x in range(numberoftradercards):
+            currentcard = available_traders[x]
+
             if x == 0:
                 cardlocationx = spacebetweentradercards
                 newtradercard = tradercard.Tradercard("test",cardlocationx,tradercardlocationy)
                 self.traders.append(newtradercard)
-                newtradercard.draw_tradercard(canvas)
+                newtradercard.draw_tradercard(canvas,currentcard)
                 tradercardwidth = newtradercard.cardwidth
             else:
                 cardlocationx = spacebetweentradercards*(1+x)+x*tradercardwidth
                 newtradercard = tradercard.Tradercard("test",cardlocationx,tradercardlocationy)
                 self.traders.append(newtradercard)
-                newtradercard.draw_tradercard(canvas)
+                newtradercard.draw_tradercard(canvas,currentcard)
 
 
 

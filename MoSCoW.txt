@@ -9,7 +9,7 @@ Must Have
                 Speel kaart actie kiest kaart uit hand en voert uit
                     Gain spice 
                     Upgrade spices
-                    trade spices 
+                    trade(exchange) spices 
                     Kaart gaat uit hand op aflegstapel
                 Koop kaart voegt kaart van traders toe aan hand
                     Betaal met spices wanneer niet de eerste kaart wordt gepakt
@@ -36,6 +36,8 @@ Should Have:
         Speler kan zijn eigen score zien
     Keuze vooraf uit hoeveel spelers er meedoen
     Caravan van alle spelers (ook de momenteel niet-actieve) is zichtbaar voor de actieve speler
+    Exchange/trade actie vaker dan 1x te gebruiken door de speler
+
 
 Could Have: 
     zichtbaar hoeveel handkaarten een tegenspeler heeft

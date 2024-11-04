@@ -21,7 +21,6 @@ gameBoard = board.Board()
 gameBoard.create_marketplace(canvas)
 gameBoard.create_traders(canvas)
 
-tradercard.load_all_traders()
 
 
   
