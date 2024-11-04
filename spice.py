@@ -19,8 +19,10 @@ class Spice:
         elif self.type == 4:
             self.color = (150,75,0)
         else:
+            print("spice type = "+ str(self.type))
             raise Exception("Error in spice - updatecolor")
         
     def draw_spice(self, canvas):
         pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.size,self.size))
             
+    

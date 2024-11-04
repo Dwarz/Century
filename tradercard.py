@@ -33,21 +33,53 @@ class Tradercard(cards.Cards):
             case 4:
                 #for each color, draw the number of spices
                 print("This is a gain card")
-                spicesdrawn = 0
+                print(cardinfo)
                 spicetype = 0
                 newspicelocationx = card_x + 10
                 newspicelocationy = card_y + 10
                 for x in cardinfo:
                     spicetype += 1 #spicetypes are 1-4, so increase before using it!
+                    #print(spicetype)
                     for n in range(x):
                         newspice = spice.Spice(spicetype,newspicelocationx,newspicelocationy)
                         newspice.draw_spice(canvas)
-                        spicesdrawn +=1
                         newspicelocationy +=20
+                        
                 cardtype = "gain"
                 
             case 8:
+                #split in 2x4 and do the same as with displaying spices for gain, but left to right instead of down.
+                exchangefrom = cardinfo[0:4]
+                exchangeinto = cardinfo[4:8]
+
                 print("This is an exchange card")
+                print(cardinfo)
+                print(exchangefrom)
+                print(exchangeinto)
+                #draw upside down arrow
+                pygame.draw.polygon(canvas, (0, 200, 0), ( (card_x+40, card_y+30), (card_x+25, card_y+50), (card_x+10, card_y+30)))
+
+                #draw exchangefrom spices TODO MAKE METHOD together with case 4 and exchangeinto!
+                spicetype = 0
+                newspicelocationx = card_x + 10
+                newspicelocationy = card_y + 10
+                for x in exchangefrom:
+                    spicetype += 1 #spicetypes are 1-4, so increase before using it!
+                    for n in range(x):
+                        newspice = spice.Spice(spicetype,newspicelocationx,newspicelocationy)
+                        newspice.draw_spice(canvas)
+                        newspicelocationx +=20
+
+                #draw exchange into spices:
+                spicetype = 0
+                newspicelocationx = card_x + 10
+                newspicelocationy = card_y + 50
+                for x in exchangeinto:
+                    spicetype += 1 #spicetypes are 1-4, so increase before using it!
+                    for n in range(x):
+                        newspice = spice.Spice(spicetype,newspicelocationx,newspicelocationy)
+                        newspice.draw_spice(canvas)
+                        newspicelocationx +=20
 
                 cardtype = "exchange"
             case _:
