@@ -24,5 +24,20 @@ class Spice:
         
     def draw_spice(self, canvas):
         pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.size,self.size))
-            
-    
+
+    @staticmethod            
+    def draw_list_of_spices(canvas, firstspice_x, firstspice_y, spicelist, direction):
+        spicetype = 0
+        newspicelocationx = firstspice_x
+        newspicelocationy = firstspice_y
+        for x in spicelist:
+            spicetype += 1 #spicetypes are 1-4, so increase before using it!
+            for n in range(x):
+                newspice = Spice(spicetype,newspicelocationx,newspicelocationy)
+                newspice.draw_spice(canvas)
+                if direction == "x":
+                    newspicelocationx +=20
+                elif direction == "y":
+                    newspicelocationy +=20
+                else:
+                    raise Exception("Error in drawing spice list")

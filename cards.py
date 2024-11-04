@@ -1,5 +1,5 @@
 class Cards:
-    cardwidth = 120
+    cardwidth = 130
     cardheight = 160
     color = (0,0,0)    
 
