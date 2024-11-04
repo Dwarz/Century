@@ -33,7 +33,6 @@ class Tradercard(cards.Cards):
             case 4:
                 #for each color, draw the number of spices
                 print("This is a gain card")
-                print(cardinfo)
                 spicetype = 0
                 newspicelocationx = card_x + 10
                 newspicelocationy = card_y + 10
@@ -53,9 +52,6 @@ class Tradercard(cards.Cards):
                 exchangeinto = cardinfo[4:8]
 
                 print("This is an exchange card")
-                print(cardinfo)
-                print(exchangefrom)
-                print(exchangeinto)
                 #draw upside down arrow
                 pygame.draw.polygon(canvas, (0, 200, 0), ( (card_x+40, card_y+30), (card_x+25, card_y+50), (card_x+10, card_y+30)))
 

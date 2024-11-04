@@ -1,7 +1,7 @@
 Must Have
     Werkend spel:
         Bord wordt gegenereerd
-            Marktkaarten en traderkaarten zichtbaar
+x            Marktkaarten en traderkaarten zichtbaar
             Muntjes boven de marktkaarten die je krijgt als je de betreffende kaart scoort
         Meerdere Spelers bestaan
             Spelers kunnen acties uitvoeren

@@ -1,6 +1,7 @@
 import pygame 
 import board
 import tradercard
+import player
   
 pygame.init() 
 print("Game is running...")
@@ -17,15 +18,16 @@ running = True
 
 #game setup  
 gameBoard = board.Board()
-
 gameBoard.create_marketplace(canvas)
 gameBoard.create_traders(canvas)
 
-
-
+# create player(s)
+currentplayer = player.Player("naam")
+currentplayer.drawplayer(canvas)
   
 
 while running: 
+
     for event in pygame.event.get(): 
         if event.type == pygame.QUIT: 
             running = False
