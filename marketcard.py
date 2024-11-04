@@ -16,7 +16,7 @@ class Marketcard(cards.Cards):
         self.spices.sort()
         self.points = sum(self.spices)
 
-    def draw_card(self,canvas):
+    def draw_marketcard(self,canvas):
         pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.cardwidth,self.cardheight))
         
         #draw points on card:

@@ -1,0 +1,48 @@
+Must Have
+    Werkend spel:
+        Bord wordt gegenereerd
+            Marktkaarten en traderkaarten zichtbaar
+            Muntjes boven de marktkaarten die je krijgt als je de betreffende kaart scoort
+        Meerdere Spelers bestaan
+            Spelers kunnen acties uitvoeren
+                Actieknoppen waarmee speler bepaalt welke actie wordt uitgevoerd
+                Speel kaart actie kiest kaart uit hand en voert uit
+                    Gain spice 
+                    Upgrade spices
+                    trade spices 
+                    Kaart gaat uit hand op aflegstapel
+                Koop kaart voegt kaart van traders toe aan hand
+                    Betaal met spices wanneer niet de eerste kaart wordt gepakt
+                        Laat speler kiezen welke spices betaald worden
+                    Schuif kaarten door na voren
+                    Voeg verkregen spices toe aan caravan
+                Claim marktkaart
+                    Controleer of speler daadwerkelijk de juiste spices in caravan heeft
+                    Verwijder spices van caravan
+                    Leg marktkaart op speler's scorepile
+                    Leg potentiele muntjes op scorepile
+                        Verminder aantal muntjes op het bord met 1
+                        Check of zilveren muntjes naar plaats van gouden muntjes verplaatst moeten worden indien gouden muntjes op
+                    Toon speler diens nieuwe score
+                Rust
+                    Pak handkaarten terug op hand
+            Beurt wisseling tussen spelers
+                Enkel de hand van huidige speler wordt getoond
+                Caravan huidige speler is zichtbaar
+        Speler krijgt keuze welke blokjes houden/wegdoen wanneer meer dan 10 in caravan aan einde beurt
+
+Should Have: 
+    Zichtbaar hoeveel muntjes en marktkaarten een speler heeft
+        Speler kan zijn eigen score zien
+    Keuze vooraf uit hoeveel spelers er meedoen
+    Caravan van alle spelers (ook de momenteel niet-actieve) is zichtbaar voor de actieve speler
+
+Could Have: 
+    zichtbaar hoeveel handkaarten een tegenspeler heeft
+    Upload maken met de daadwerkelijke Marktkaarten ipv een random generator
+    Actieknoppen onbeschikbaar / greyed out maken als de betreffende actie niet mogelijk is (score kaart blijft grijs wanneer caravan met geen van de marktkaarten overeenkomt, speel kaart niet beschikbaar als hand leeg)
+    Reset board and play again button na spelen ipv spel sluiten
+
+Wont Have (wish to have but not gonna happen):
+    Random generated /AI computer speler
+    Keuze uit spelen enkel century, of toevoeging/combinatie van andere "spice road" spellen

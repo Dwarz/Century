@@ -1,4 +1,5 @@
 import cards
+import pygame
 
 class Tradercard(cards.Cards):
     type = 'tradercard'
@@ -8,6 +9,10 @@ class Tradercard(cards.Cards):
         self.action = action
         self.locationx = locationx
         self.locationy = locationy
+
+    def draw_tradercard(self,canvas):
+        pygame.draw.rect(canvas, self.color, pygame.Rect(self.locationx,self.locationy,self.cardwidth,self.cardheight))
+        #TODO: Add card characteristics (action, number of blocks, which colors)
 
 def load_all_traders():
     traders = []
